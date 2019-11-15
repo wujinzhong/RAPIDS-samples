@@ -14,7 +14,7 @@ print(df)
 ddf = dask_cudf.from_cudf(df, npartitions=2) 
 print(ddf.persist())
 
-client = Client("192.168.99.3:8487")
+client = Client("127.0.0.1:8487")
 client.publish_dataset(shared_dataset1=ddf)
 print(client.list_datasets())
 
